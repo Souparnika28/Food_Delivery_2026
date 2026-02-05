@@ -23,7 +23,7 @@ const Restaurant = () => {
       setError('');
 
       // Fetch restaurant details
-      const restaurantResponse = await fetch(`http://localhost:4000/api/restaurants/${id}`);
+      const restaurantResponse = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/restaurants/${id}`);
       if (!restaurantResponse.ok) {
         throw new Error('Restaurant not found');
       }
@@ -31,7 +31,7 @@ const Restaurant = () => {
       setRestaurant(restaurantData);
 
       // Fetch menu items
-      const menuResponse = await fetch(`http://localhost:4000/api/restaurants/${id}/menu`);
+      const menuResponse = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/restaurants/${id}/menu`);
       if (!menuResponse.ok) {
         throw new Error('Failed to fetch menu');
       }
