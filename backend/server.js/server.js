@@ -205,8 +205,8 @@ app.get('/api/restaurants/:id/menu', async (req, res) => {
 
 // ==================== Server Start ====================
 
-// For local development
-if (process.env.NODE_ENV !== 'production') {
+// Only skip listening on Vercel serverless (not on Render or local)
+if (!process.env.VERCEL) {
   app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
     console.log(`Make sure MongoDB is running!`);
