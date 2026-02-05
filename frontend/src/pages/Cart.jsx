@@ -27,7 +27,7 @@ const Cart = () => {
 
     try {
       // Send order to backend
-      const response = await fetch('${import.meta.env.VITE_API_BASE_URL}/api/orders', {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/orders`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -30,7 +30,7 @@ const Register = () => {
 
     try {
       // Send registration request to backend
-      const response = await fetch('${import.meta.env.VITE_API_BASE_URL}/api/signup', {
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/signup`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
